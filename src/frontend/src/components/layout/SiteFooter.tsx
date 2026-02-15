@@ -1,0 +1,73 @@
+import { Link } from '@tanstack/react-router';
+import { Heart } from 'lucide-react';
+
+export default function SiteFooter() {
+  const currentYear = new Date().getFullYear();
+  const appIdentifier = typeof window !== 'undefined' ? window.location.hostname : 'abm-nexttech';
+
+  return (
+    <footer className="border-t border-border/40 bg-muted/30">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Company Info */}
+          <div>
+            <img
+              src="/assets/generated/ABMNexttech.png"
+              alt="ABM Nexttech LLP"
+              className="mb-4 h-8 w-auto"
+            />
+            <p className="text-sm text-muted-foreground">
+              Transforming financial operations through innovative technology and expert consulting.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold">Quick Links</h3>
+            <nav className="flex flex-col gap-2">
+              <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Home
+              </Link>
+              <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Services
+              </Link>
+              <Link to="/product" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Product
+              </Link>
+              <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Contact
+              </Link>
+            </nav>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold">Contact</h3>
+            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+              <p>Email: info@abmnexttech.com</p>
+              <p>Phone: +1 (555) 123-4567</p>
+              <p>Address: 123 Finance Street, Suite 100</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 border-t border-border/40 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} ABM Nexttech LLP. All rights reserved.
+          </p>
+          <p className="text-sm text-muted-foreground flex items-center gap-1">
+            Built with <Heart className="h-3 w-3 fill-current text-red-500" /> using{' '}
+            <a
+              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(appIdentifier)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              caffeine.ai
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no methods implemented.",
+  "feature_evidence.json": "Report listing implemented features, associated files, components, tests, and confidence levels.",
+  "frontend-file-summaries.txt": "Human-written summaries describing each major frontend source file and its purpose.",
+  "frontend/index.css": "Tailwind base stylesheet defining OKLCH color variables for light and dark modes and applying global styles.",
+  "frontend/index.html": "Basic HTML shell that loads the React app via main.tsx into the root div.",
+  "frontend/src/App.tsx": "Configures TanStack Router with routes for all pages and renders the router provider.",
+  "frontend/src/components/layout/SiteFooter.tsx": "Footer displaying the logo, navigation links, contact info, and attribution.",
+  "frontend/src/components/layout/SiteHeader.tsx": "Responsive header with logo, desktop nav, and mobile sheet menu showing active routes.",
+  "frontend/src/components/layout/SiteLayout.tsx": "Layout wrapper that renders the header, page outlet, and footer.",
+  "frontend/src/hooks/useActor.ts": "Hook that creates and manages a backend actor instance, reacting to identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Internet Identity auth provider and hooks handling login state, identity loading, and persistence.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks interacting with the backend.",
+  "frontend/src/index.css": "Defines Tailwind layers and sets extensive light/dark theme CSS variables for colors, radius, and base styles.",
+  "frontend/src/main.tsx": "Bootstraps the React app with React Query and Internet Identity providers and loads global styles.",
+  "frontend/src/pages/ContactPage.tsx": "Implements a contact form with validation, mailto submission, clipboard fallback, and contact info cards.",
+  "frontend/src/pages/HomePage.tsx": "Renders the homepage with a hero banner, features, services overview, and promotional content.",
+  "frontend/src/pages/ProductPage.tsx": "Displays product details, features, benefits, and a hero section for the AI-driven reconciliation platform.",
+  "frontend/src/pages/ServicesPage.tsx": "Shows a services overview with detailed consulting service cards and structured sections.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors bound to CSS variables, typography, container queries, animations, and theme extensions.",
+  "project_state.json": "Stores project metadata, architectural notes, known issues, and required website features for ABM Nexttech LLP. Tracks current project state version and outlines incomplete branding fixes and deployment gaps."
+}

@@ -1,0 +1,74 @@
+{
+  "kind": "build_request",
+  "title": "Apply provided ABM Nexttech logo and update Product/Services messaging (launching soon, demo soon, implementation/support/development)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "text": "Add the user-provided logo file (ABMNexttech.png) to the frontend static assets and replace the current generated wordmark logo usage with this logo across the site header and footer.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Use this logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The file ABMNexttech.png is available as a static asset under frontend/public/assets/generated/ABMNexttech.png (or equivalent public path used by the app).",
+        "The header logo in frontend/src/components/layout/SiteHeader.tsx uses the provided logo asset instead of /assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png (desktop and mobile header).",
+        "The footer logo in frontend/src/components/layout/SiteFooter.tsx uses the provided logo asset instead of /assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png.",
+        "Logo <img> elements have accurate alt text: \"ABM Nexttech LLP\" and render without layout breakage on mobile and desktop."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Update the Product page copy to clearly communicate that the AI-driven bank reconciliation product is currently in development, that the launch is coming soon, and that a demo will be available soon, while keeping user-facing text in English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "the product development is in progress. So mention that the launching soon and demo is available soon."
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/src/pages/ProductPage.tsx includes clear visible messaging indicating: (1) product development is in progress, (2) launching soon, and (3) demo available soon.",
+        "Any call-to-action labels and supporting copy on the Product page are consistent with “demo available soon” (i.e., do not imply the demo can be requested immediately unless the text also clarifies availability timing).",
+        "No other pages contradict the Product page status messaging (e.g., no claims that the product is already live)."
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Update the Services page to explicitly include implementation, support, and development as part of ABM Nexttech LLP service offerings (in English), in addition to the existing service categories.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "we are going to do implement, support and developments under services you can mention this."
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/src/pages/ServicesPage.tsx services content includes explicit mention of implementation, support, and development offerings (either as new service cards or clearly integrated into existing service descriptions).",
+        "The Services page hero/intro and/or service list reads naturally and remains consistent with the site’s professional tone.",
+        "The Home page services overview (frontend/src/pages/HomePage.tsx) does not conflict with the updated Services offerings; if it summarizes services, it also reflects implementation/support/development where appropriate."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (shadcn components); compose them instead.",
+    "Do not modify immutable hook/bootstrap files: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx."
+  ],
+  "nonGoals": [
+    "Implementing an actual product demo experience or demo scheduling system beyond the existing Contact page flow.",
+    "Adding new backend APIs or storing product status in the Motoko canister for this change request."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

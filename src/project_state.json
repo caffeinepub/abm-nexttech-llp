@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Website for ABM Nexttech LLP to present consulting services and product development, including an AI-driven bank reconciliation product offering.",
+  "architectural_notes": [
+    "Company name spelling: “ABM Nexttech LLP” (not “ABM nexttexh LLP”); update all site text/branding accordingly.",
+    "Update required generated logo/wordmark text to “ABM Nexttech LLP”.",
+    "Deployment/build requires regenerating the full project files first; prior deployment failed due to missing/empty codebase.",
+    "Use the user-provided official logo asset for site branding (replace any generated/placeholder logo where applicable)."
+  ],
+  "known_issues": [
+    "Branding/name typo present in current project state/assets: “nexttexh” should be “Nexttech”; requires updates across copy and generated images.",
+    "Deployment failed because the project/codebase files did not exist (empty or not generated), leaving nothing to build/deploy."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-multi-page-marketing-website-for-the-company-name-abm-nexttexh-llp-that-clearly-presents-1-consulting-services-and-2-product-development-including-an-overview-of-an-ai-driven-bank-reconciliation-product",
+      "title": "Create a responsive multi-page marketing website for the company name “ABM nexttexh LLP” that clearly presents (1) consulting services and (2) product development, including an overview of an AI-driven bank reconciliation product.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-clear-website-navigation-header-with-links-and-a-mobile-friendly-menu-and-a-consistent-footer-containing-company-name-quick-links-and-basic-contact-placeholders-email-phone-address-placeholders-if-real-values-are-not-provided",
+      "title": "Implement clear website navigation (header with links and a mobile-friendly menu) and a consistent footer containing company name, quick links, and basic contact placeholders (email/phone/address placeholders if real values are not provided).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-dedicated-product-page-section-describing-the-ai-bank-reconciliation-product-at-a-high-level-including-problem-statement-how-it-works-simple-steps-key-benefits-and-a-call-to-action-to-contact-the-company",
+      "title": "Add a dedicated Product page/section describing the AI bank reconciliation product at a high level, including: problem statement, how it works (simple steps), key benefits, and a call-to-action to contact the company.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-services-page-section-that-presents-consulting-services-and-product-development-offerings-with-concise-descriptions-e-g-finance-operations-process-consulting-reconciliation-process-setup-implementation-support-product-engineering",
+      "title": "Add a Services page/section that presents consulting services and product development offerings with concise descriptions (e.g., finance operations/process consulting, reconciliation process setup, implementation support, product engineering).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-contact-page-section-with-a-simple-contact-form-ui-name-email-message-that-validates-required-fields-on-the-client-and-provides-a-working-submission-behavior-without-external-email-providers-e-g-opens-a-mailto-link-with-prefilled-subject-body-or-stores-draft-locally-and-shows-a-clear-copy-message-fallback",
+      "title": "Add a Contact page/section with a simple contact form UI (name, email, message) that validates required fields on the client and provides a working submission behavior without external email providers (e.g., opens a mailto: link with prefilled subject/body, or stores draft locally and shows a clear ‘copy message’ fallback).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-single-coherent-visual-theme-across-the-site-colors-typography-spacing-buttons-section-styling-choose-a-professional-fintech-consulting-aesthetic-not-blue-purple-dominant-and-ensure-consistent-components-and-section-layouts",
+      "title": "Apply a single coherent visual theme across the site (colors, typography, spacing, buttons, section styling). Choose a professional “fintech consulting” aesthetic (not blue/purple dominant) and ensure consistent components and section layouts.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-static-images-to-the-project-and-use-them-in-the-ui-store-under-frontend-public-assets-generated-and-reference-them-directly-from-the-frontend",
+      "title": "Add the required generated static images to the project and use them in the UI (store under frontend/public/assets/generated and reference them directly from the frontend).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-incorrect-spelling-nexttexh-with-nexttech-across-all-user-facing-website-copy-including-but-not-limited-to-the-company-name-string-currently-shown-as-abm-nexttexh-llp-ensure-consistent-capitalization-as-abm-nexttech-llp-wherever-the-full-legal-name-is-displayed",
+      "title": "Replace the incorrect spelling \"nexttexh\" with \"Nexttech\" across all user-facing website copy, including (but not limited to) the company name string currently shown as “ABM nexttexh LLP”. Ensure consistent capitalization as “ABM Nexttech LLP” wherever the full legal name is displayed.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-and-update-any-static-assets-and-accessibility-text-that-may-contain-the-incorrect-spelling-including-image-text-wordmarks-embedded-in-generated-images-and-any-related-alt-text-captions-so-that-no-delivered-asset-contains-nexttexh",
+      "title": "Audit and update any static assets and accessibility text that may contain the incorrect spelling, including image text/wordmarks embedded in generated images and any related alt text/captions, so that no delivered asset contains “nexttexh”.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-any-metadata-and-non-visible-but-user-facing-strings-are-corrected-as-well-e-g-document-title-meta-description-open-graph-title-description-if-present-so-the-brand-appears-as-nexttech-when-shared-bookmarked",
+      "title": "Ensure any metadata and non-visible but user-facing strings are corrected as well (e.g., document title, meta description, Open Graph title/description if present) so the brand appears as “Nexttech” when shared/bookmarked.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-regenerate-the-full-project-codebase-frontend-backend-from-the-pre-injected-react-motoko-template-so-that-all-required-project-files-exist-and-the-app-can-be-built-and-deployed",
+      "title": "Regenerate the full project codebase (frontend + backend) from the pre-injected React+Motoko template so that all required project files exist and the app can be built and deployed.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-regenerated-project-includes-the-previously-defined-abm-nexttech-llp-marketing-website-features-multi-page-site-with-services-product-contact-header-footer-navigation-coherent-professional-fintech-consulting-theme-not-dominated-by-blue-purple-contact-form-behavior-without-external-email-providers-corrected-branding-spelling-abm-nexttech-llp-everywhere-including-metadata-and-any-user-facing-strings",
+      "title": "Ensure the regenerated project includes the previously defined ABM Nexttech LLP marketing website features (multi-page site with Services, Product, Contact; header/footer navigation; coherent professional fintech consulting theme not dominated by blue/purple; contact form behavior without external email providers; corrected branding spelling “ABM Nexttech LLP” everywhere including metadata and any user-facing strings).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-user-provided-logo-file-abmnexttech-png-to-the-frontend-static-assets-and-replace-the-current-generated-wordmark-logo-usage-with-this-logo-across-the-site-header-and-footer",
+      "title": "Add the user-provided logo file (ABMNexttech.png) to the frontend static assets and replace the current generated wordmark logo usage with this logo across the site header and footer.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-product-page-copy-to-clearly-communicate-that-the-ai-driven-bank-reconciliation-product-is-currently-in-development-that-the-launch-is-coming-soon-and-that-a-demo-will-be-available-soon-while-keeping-user-facing-text-in-english",
+      "title": "Update the Product page copy to clearly communicate that the AI-driven bank reconciliation product is currently in development, that the launch is coming soon, and that a demo will be available soon, while keeping user-facing text in English.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-services-page-to-explicitly-include-implementation-support-and-development-as-part-of-abm-nexttech-llp-service-offerings-in-english-in-addition-to-the-existing-service-categories",
+      "title": "Update the Services page to explicitly include implementation, support, and development as part of ABM Nexttech LLP service offerings (in English), in addition to the existing service categories.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a company website for ABM nexttexh LLP showcasing consulting services and product development, including the AI bank reconciliation product overview.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add basic automated smoke checks to prevent regressions that caused the failed deployment (e.g., verify key required files exist, and the frontend renders without runtime errors).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Update Product section to state product development is in progress, launching soon, and demo will be available soon.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Update Services section to include implementation, support, and development offerings.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Replace current branding/logo with the user-provided logo across the site (header/footer and relevant sections).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "ABM Nexttech LLP",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

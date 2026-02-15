@@ -1,0 +1,76 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Apply ABM Nexttech LLP logo and update Product/Services messaging",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "summary": "Add the provided ABMNexttech.png as a static asset and replace the current wordmark logo across header and footer.",
+      "acceptanceCriteria": [
+        "The file ABMNexttech.png is available as a static asset under frontend/public/assets/generated/ABMNexttech.png (or equivalent public path used by the app).",
+        "The header logo in frontend/src/components/layout/SiteHeader.tsx uses the provided logo asset instead of /assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png (desktop and mobile header).",
+        "The footer logo in frontend/src/components/layout/SiteFooter.tsx uses the provided logo asset instead of /assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png.",
+        "Logo <img> elements have accurate alt text: \"ABM Nexttech LLP\" and render without layout breakage on mobile and desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/ABMNexttech.png",
+          "operation": "create",
+          "description": "Add the user-provided logo file to the public static assets so it can be referenced by header/footer image tags."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Replace both desktop and mobile header logo <img> src values to use /assets/generated/ABMNexttech.png, keep alt text exactly \"ABM Nexttech LLP\", and adjust sizing classes if needed to prevent layout breakage across breakpoints."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Replace the footer logo <img> src to use /assets/generated/ABMNexttech.png, keep alt text exactly \"ABM Nexttech LLP\", and adjust sizing/margins if needed to maintain the existing footer layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Update Product page messaging to clearly state the product is in development, launching soon, and demo available soon (English only).",
+      "acceptanceCriteria": [
+        "frontend/src/pages/ProductPage.tsx includes clear visible messaging indicating: (1) product development is in progress, (2) launching soon, and (3) demo available soon.",
+        "Any call-to-action labels and supporting copy on the Product page are consistent with “demo available soon” (i.e., do not imply the demo can be requested immediately unless the text also clarifies availability timing).",
+        "No other pages contradict the Product page status messaging (e.g., no claims that the product is already live)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductPage.tsx",
+          "operation": "modify",
+          "description": "Update hero and CTA copy to explicitly communicate that development is in progress, launch is coming soon, and a demo will be available soon; adjust CTA button labels/text so they do not imply immediate demo availability (while still optionally directing users to Contact for early interest)."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Review and adjust any homepage product-related language (if needed) to ensure it does not imply the product is already live and remains consistent with the Product page’s “in development / launching soon / demo soon” messaging."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Update Services page to explicitly include implementation, support, and development offerings and keep Home page services overview consistent.",
+      "acceptanceCriteria": [
+        "frontend/src/pages/ServicesPage.tsx services content includes explicit mention of implementation, support, and development offerings (either as new service cards or clearly integrated into existing service descriptions).",
+        "The Services page hero/intro and/or service list reads naturally and remains consistent with the site’s professional tone.",
+        "The Home page services overview (frontend/src/pages/HomePage.tsx) does not conflict with the updated Services offerings; if it summarizes services, it also reflects implementation/support/development where appropriate."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Update the services list and surrounding copy to explicitly call out implementation, support, and development as ABM Nexttech LLP offerings (e.g., by adding a dedicated Support service card and/or renaming/rewriting existing cards so the three terms appear clearly and professionally)."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Update the Services Overview section bullets/summary to explicitly reflect implementation, support, and development so it aligns with the Services page and does not conflict with the updated offerings."
+        }
+      ]
+    }
+  ]
+}

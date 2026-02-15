@@ -1,0 +1,71 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-15T19:49:23.795Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-14",
+        "summary": "Add the user-provided logo file (ABMNexttech.png) to the frontend static assets and replace the current generated wordmark logo usage with this logo across the site header and footer.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/ABMNexttech.png",
+          "frontend/src/components/layout/SiteHeader.tsx",
+          "frontend/src/components/layout/SiteFooter.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/layout/SiteHeader.tsx",
+          "frontend/src/components/layout/SiteFooter.tsx"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Update the Product page copy to clearly communicate that the AI-driven bank reconciliation product is currently in development, that the launch is coming soon, and that a demo will be available soon, while keeping user-facing text in English.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ProductPage.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ProductPage.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Update the Services page to explicitly include implementation, support, and development as part of ABM Nexttech LLP service offerings (in English), in addition to the existing service categories.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/layout/SiteFooter.tsx",
+    "frontend/src/components/layout/SiteHeader.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ProductPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
