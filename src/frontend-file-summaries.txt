@@ -1,14 +1,16 @@
 {
   "frontend/src/App.tsx": "Root application component that sets up TanStack Router with routes for Home, Services, Product, and Contact pages, all wrapped in the SiteLayout component.",
   "frontend/src/components/layout/SiteLayout.tsx": "Main layout wrapper component that renders the site header, main content outlet, and footer for all pages.",
-  "frontend/src/components/layout/SiteHeader.tsx": "Responsive header component with ABM Nexttech LLP branding using the new logo, desktop navigation menu, and mobile sheet drawer menu with active route highlighting.",
-  "frontend/src/components/layout/SiteFooter.tsx": "Site footer with company branding using the new logo, quick navigation links, contact information, copyright notice, and Caffeine.ai attribution with UTM tracking.",
+  "frontend/src/components/layout/SiteHeader.tsx": "Responsive header component with ABM Nexttech LLP branding using the BrandMark component with fallback, desktop navigation menu, and mobile sheet drawer menu with active route highlighting.",
+  "frontend/src/components/layout/SiteFooter.tsx": "Site footer with company branding using the BrandMark component with fallback, quick navigation links, contact information imported from constants, copyright notice, and Caffeine.ai attribution with UTM tracking.",
   "frontend/src/pages/HomePage.tsx": "Home page featuring hero section with banner image, company overview, feature cards highlighting operational excellence, and services overview explicitly mentioning implementation services, support, and custom development aligned with the Services page.",
   "frontend/src/pages/ServicesPage.tsx": "Services page showcasing ABM Nexttech LLP's consulting offerings with explicit mention of implementation services, support & maintenance, and custom development alongside finance operations, reconciliation design, and product engineering with a four-step consulting approach.",
   "frontend/src/pages/ProductPage.tsx": "Product page featuring \"Launching Soon\" and \"In Development\" badges, clearly communicating that the AI-driven bank reconciliation platform is in development with demo available soon, including problem statement, workflow, features, benefits, and early access CTA.",
-  "frontend/src/pages/ContactPage.tsx": "Contact page with contact information cards and a validated contact form that opens mailto link and copies message to clipboard as fallback, with client-side validation for required fields.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page with contact information cards and a validated contact form that opens mailto link to abmnexttech@gmail.com and copies message to clipboard as fallback, with client-side validation for required fields.",
   "frontend/src/index.css": "Global styles with OKLCH color system featuring a professional fintech palette with deep teal primary color and warm neutral tones for both light and dark modes.",
   "frontend/tailwind.config.js": "Tailwind configuration extending the theme with Inter font family and OKLCH-based color tokens mapped to CSS variables for consistent theming.",
   "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks to interact with backend (currently empty as backend has no methods).",
-  "frontend/src/config.ts": "Configuration module that loads environment settings and creates backend actor instances with proper agent configuration for local or IC network."
+  "frontend/src/config.ts": "Configuration module that loads environment settings and creates backend actor instances with proper agent configuration for local or IC network.",
+  "frontend/src/constants/contact.ts": "Single source of truth for ABM Nexttech LLP contact information (email, phone, address) used across the site to ensure consistency.",
+  "frontend/src/components/brand/BrandMark.tsx": "Reusable brand mark component that displays the ABM Nexttech LLP logo image with automatic fallback to text \"ABM Nexttech LLP\" if the image fails to load, accepting customizable className props for flexible sizing."
 }

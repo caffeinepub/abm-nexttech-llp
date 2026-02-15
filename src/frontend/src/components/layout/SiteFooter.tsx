@@ -1,5 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { Heart } from 'lucide-react';
+import { CONTACT_INFO } from '@/constants/contact';
+import BrandMark from '@/components/brand/BrandMark';
 
 export default function SiteFooter() {
   const currentYear = new Date().getFullYear();
@@ -11,11 +13,9 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Company Info */}
           <div>
-            <img
-              src="/assets/generated/ABMNexttech.png"
-              alt="ABM Nexttech LLP"
-              className="mb-4 h-8 w-auto"
-            />
+            <div className="mb-4">
+              <BrandMark className="h-8 w-auto" textClassName="text-xl font-bold" />
+            </div>
             <p className="text-sm text-muted-foreground">
               Transforming financial operations through innovative technology and expert consulting.
             </p>
@@ -44,9 +44,9 @@ export default function SiteFooter() {
           <div>
             <h3 className="mb-4 text-sm font-semibold">Contact</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <p>Email: info@abmnexttech.com</p>
-              <p>Phone: +1 (555) 123-4567</p>
-              <p>Address: 123 Finance Street, Suite 100</p>
+              <p>Email: {CONTACT_INFO.email}</p>
+              <p>Phone: {CONTACT_INFO.phone}</p>
+              <p>Address: {CONTACT_INFO.address.full}</p>
             </div>
           </div>
         </div>

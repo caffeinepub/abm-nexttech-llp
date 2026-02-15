@@ -1,18 +1,21 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 9,
+  "projectStateVersion": 13,
   "summary": "Website for ABM Nexttech LLP to present consulting services and product development, including an AI-driven bank reconciliation product offering.",
   "architectural_notes": [
     "Company name spelling: “ABM Nexttech LLP” (not “ABM nexttexh LLP”); update all site text/branding accordingly.",
     "Update required generated logo/wordmark text to “ABM Nexttech LLP”.",
     "Deployment/build requires regenerating the full project files first; prior deployment failed due to missing/empty codebase.",
-    "Use the user-provided official logo asset for site branding (replace any generated/placeholder logo where applicable)."
+    "Use the user-provided official logo asset for site branding (replace any generated/placeholder logo where applicable).",
+    "Use the provided official contact details on the site (email: abmnexttech@gmail.com; phone: +91 7588390289; address: JM Road, Suite 100 near COEP Hostel, Shivajinagar Pune) instead of placeholders.",
+    "User is OK with using a suitable logo of our choice; priority is that the logo renders correctly (uploaded logo currently not showing)."
   ],
   "known_issues": [
     "Branding/name typo present in current project state/assets: “nexttexh” should be “Nexttech”; requires updates across copy and generated images.",
-    "Deployment failed because the project/codebase files did not exist (empty or not generated), leaving nothing to build/deploy."
+    "Deployment failed because the project/codebase files did not exist (empty or not generated), leaving nothing to build/deploy.",
+    "Uploaded logo is not showing on the website (logo asset/rendering issue)."
   ],
-  "isFixRequest": false,
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-responsive-multi-page-marketing-website-for-the-company-name-abm-nexttexh-llp-that-clearly-presents-1-consulting-services-and-2-product-development-including-an-overview-of-an-ai-driven-bank-reconciliation-product",
@@ -133,6 +136,46 @@
         "REQ-16"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-all-displayed-company-contact-details-across-the-website-to-use-the-user-provided-real-values-email-abmnexttech-gmail-com-phone-91-7588390289-and-address-jm-road-suite-100-near-coep-hostel-shivajinagar-pune-this-includes-at-minimum-the-footer-contact-block-and-the-contact-page-contact-info-cards",
+      "title": "Update all displayed company contact details across the website to use the user-provided real values: Email \"abmnexttech@gmail.com\", Phone \"+91 7588390289\", and Address \"JM Road, Suite 100 near COEP Hostel, Shivajinagar Pune\". This includes (at minimum) the footer contact block and the Contact page contact-info cards.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-contact-page-form-submission-behavior-so-the-generated-mailto-link-targets-abmnexttech-gmail-com-instead-of-any-placeholder-email-and-update-any-related-user-facing-fallback-text-to-reference-abmnexttech-gmail-com",
+      "title": "Update the Contact page form submission behavior so the generated mailto link targets \"abmnexttech@gmail.com\" (instead of any placeholder email), and update any related user-facing fallback text to reference \"abmnexttech@gmail.com\".",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-site-branding-logo-so-a-logo-reliably-renders-in-both-the-header-and-footer-on-all-pages-ensure-the-logo-asset-path-is-valid-in-production-builds-including-case-sensitivity-the-file-is-present-in-the-correct-static-assets-directory-and-the-rendered-logo-is-visible-not-zero-sized-hidden-on-both-desktop-and-mobile-navigation",
+      "title": "Fix the site branding logo so a logo reliably renders in both the header and footer on all pages. Ensure the logo asset path is valid in production builds (including case sensitivity), the file is present in the correct static assets directory, and the rendered logo is visible (not zero-sized/hidden) on both desktop and mobile navigation.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-graceful-fallback-if-the-logo-image-cannot-be-loaded-display-a-text-based-brand-mark-abm-nexttech-llp-in-the-same-location-so-the-header-and-footer-never-appear-without-branding",
+      "title": "Add a graceful fallback if the logo image cannot be loaded: display a text-based brand mark (\"ABM Nexttech LLP\") in the same location so the header and footer never appear without branding.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-allow-flexible-logo-placement-consistent-with-the-existing-design-it-is-acceptable-to-adjust-the-logo-placement-spacing-in-the-header-and-footer-as-needed-as-long-as-it-remains-professional-and-the-logo-renders-correctly",
+      "title": "Allow flexible logo placement consistent with the existing design: it is acceptable to adjust the logo placement/spacing in the header and footer as needed, as long as it remains professional and the logo renders correctly.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -163,8 +206,14 @@
       "status": "pending"
     },
     {
-      "id": "AR-7",
-      "summary": "Replace current branding/logo with the user-provided logo across the site (header/footer and relevant sections).",
+      "id": "AR-8",
+      "summary": "Update the site contact details (footer/contact section) to use the provided real values: abmnexttech@gmail.com, +91 7588390289, and address 'JM Road, Suite 100 near COEP Hostel, Shivajinagar Pune'.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Fix site branding so a logo is actually displayed (uploaded logo currently not showing); user is OK with using any suitable logo placement/asset as long as it renders correctly.",
       "reqIds": [],
       "status": "pending"
     }

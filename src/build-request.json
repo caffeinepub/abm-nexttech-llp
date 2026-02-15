@@ -1,71 +1,73 @@
 {
   "kind": "build_request",
-  "title": "Apply provided ABM Nexttech logo and update Product/Services messaging (launching soon, demo soon, implementation/support/development)",
+  "title": "Fix website logo not rendering and allow flexible logo placement",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-14",
-      "text": "Add the user-provided logo file (ABMNexttech.png) to the frontend static assets and replace the current generated wordmark logo usage with this logo across the site header and footer.",
+      "id": "REQ-19",
+      "text": "Fix the site branding logo so a logo reliably renders in both the header and footer on all pages. Ensure the logo asset path is valid in production builds (including case sensitivity), the file is present in the correct static assets directory, and the rendered logo is visible (not zero-sized/hidden) on both desktop and mobile navigation.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "Use this logo"
+          "you can keep logo as you feel good. My uploaded logo is not showing on the website. You can keep logo as you want to place"
         ]
       },
       "acceptanceCriteria": [
-        "The file ABMNexttech.png is available as a static asset under frontend/public/assets/generated/ABMNexttech.png (or equivalent public path used by the app).",
-        "The header logo in frontend/src/components/layout/SiteHeader.tsx uses the provided logo asset instead of /assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png (desktop and mobile header).",
-        "The footer logo in frontend/src/components/layout/SiteFooter.tsx uses the provided logo asset instead of /assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png.",
-        "Logo <img> elements have accurate alt text: \"ABM Nexttech LLP\" and render without layout breakage on mobile and desktop."
+        "On Home/Services/Product/Contact pages, a logo is visible in the top navigation bar.",
+        "In the mobile menu (sheet) header, a logo is visible.",
+        "In the footer, a logo is visible.",
+        "The deployed build loads the logo without 404s; the referenced path matches the actual filename and casing.",
+        "Logo has sensible sizing (non-zero height) and does not break layout at common breakpoints."
       ]
     },
     {
-      "id": "REQ-15",
-      "text": "Update the Product page copy to clearly communicate that the AI-driven bank reconciliation product is currently in development, that the launch is coming soon, and that a demo will be available soon, while keeping user-facing text in English.",
+      "id": "REQ-20",
+      "text": "Add a graceful fallback if the logo image cannot be loaded: display a text-based brand mark (\"ABM Nexttech LLP\") in the same location so the header and footer never appear without branding.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "the product development is in progress. So mention that the launching soon and demo is available soon."
+          "My uploaded logo is not showing on the website."
         ]
       },
       "acceptanceCriteria": [
-        "frontend/src/pages/ProductPage.tsx includes clear visible messaging indicating: (1) product development is in progress, (2) launching soon, and (3) demo available soon.",
-        "Any call-to-action labels and supporting copy on the Product page are consistent with “demo available soon” (i.e., do not imply the demo can be requested immediately unless the text also clarifies availability timing).",
-        "No other pages contradict the Product page status messaging (e.g., no claims that the product is already live)."
+        "If the logo image fails to load, the header shows the text \"ABM Nexttech LLP\" instead of a broken image.",
+        "If the logo image fails to load, the footer shows the text \"ABM Nexttech LLP\" instead of a broken image.",
+        "Fallback text is accessible and does not introduce new spelling variants of the company name."
       ]
     },
     {
-      "id": "REQ-16",
-      "text": "Update the Services page to explicitly include implementation, support, and development as part of ABM Nexttech LLP service offerings (in English), in addition to the existing service categories.",
+      "id": "REQ-21",
+      "text": "Allow flexible logo placement consistent with the existing design: it is acceptable to adjust the logo placement/spacing in the header and footer as needed, as long as it remains professional and the logo renders correctly.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "we are going to do implement, support and developments under services you can mention this."
+          "You can keep logo as you want to place"
         ]
       },
       "acceptanceCriteria": [
-        "frontend/src/pages/ServicesPage.tsx services content includes explicit mention of implementation, support, and development offerings (either as new service cards or clearly integrated into existing service descriptions).",
-        "The Services page hero/intro and/or service list reads naturally and remains consistent with the site’s professional tone.",
-        "The Home page services overview (frontend/src/pages/HomePage.tsx) does not conflict with the updated Services offerings; if it summarizes services, it also reflects implementation/support/development where appropriate."
+        "Logo placement updates (if any) keep navigation links usable and aligned on desktop.",
+        "Logo placement updates (if any) keep the mobile menu toggle usable and aligned on small screens.",
+        "Footer layout remains readable and balanced after any logo placement changes."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/components/ui (shadcn components); compose them instead.",
-    "Do not modify immutable hook/bootstrap files: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx."
+    "Do not edit files under frontend/src/components/ui (read-only).",
+    "Do not edit immutable paths listed in SYSTEM_CONTEXT (e.g., frontend/src/main.tsx, frontend/src/hooks/useActor.ts, frontend/src/hooks/useInternetIdentity.ts).",
+    "Keep all user-facing text in English."
   ],
   "nonGoals": [
-    "Implementing an actual product demo experience or demo scheduling system beyond the existing Contact page flow.",
-    "Adding new backend APIs or storing product status in the Motoko canister for this change request."
+    "Adding new pages or new marketing content beyond what is needed to fix logo rendering.",
+    "Implementing backend logo storage or uploading; logo should be served as a static frontend asset."
   ],
   "imageRequirements": {
     "required": [],

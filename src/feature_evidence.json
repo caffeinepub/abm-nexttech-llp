@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-the-user-provided-logo-file-abmnexttech-png-to-the-frontend-static-assets-and-replace-the-current-generated-wordmark-logo-usage-with-this-logo-across-the-site-header-and-footer",
-      "featureTitle": "Add the user-provided logo file (ABMNexttech.png) to the frontend static assets and replace the current generated wordmark logo usage with this logo across the site header and footer.",
+      "featureId": "feature-fix-the-site-branding-logo-so-a-logo-reliably-renders-in-both-the-header-and-footer-on-all-pages-ensure-the-logo-asset-path-is-valid-in-production-builds-including-case-sensitivity-the-file-is-present-in-the-correct-static-assets-directory-and-the-rendered-logo-is-visible-not-zero-sized-hidden-on-both-desktop-and-mobile-navigation",
+      "featureTitle": "Fix the site branding logo so a logo reliably renders in both the header and footer on all pages. Ensure the logo asset path is valid in production builds (including case sensitivity), the file is present in the correct static assets directory, and the rendered logo is visible (not zero-sized/hidden) on both desktop and mobile navigation.",
       "files": [
         "frontend/src/components/layout/SiteFooter.tsx",
         "frontend/src/components/layout/SiteHeader.tsx"
@@ -16,16 +16,17 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-14"
+        "REQ-19"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-the-product-page-copy-to-clearly-communicate-that-the-ai-driven-bank-reconciliation-product-is-currently-in-development-that-the-launch-is-coming-soon-and-that-a-demo-will-be-available-soon-while-keeping-user-facing-text-in-english",
-      "featureTitle": "Update the Product page copy to clearly communicate that the AI-driven bank reconciliation product is currently in development, that the launch is coming soon, and that a demo will be available soon, while keeping user-facing text in English.",
+      "featureId": "feature-add-a-graceful-fallback-if-the-logo-image-cannot-be-loaded-display-a-text-based-brand-mark-abm-nexttech-llp-in-the-same-location-so-the-header-and-footer-never-appear-without-branding",
+      "featureTitle": "Add a graceful fallback if the logo image cannot be loaded: display a text-based brand mark (\"ABM Nexttech LLP\") in the same location so the header and footer never appear without branding.",
       "files": [
-        "frontend/src/pages/HomePage.tsx",
-        "frontend/src/pages/ProductPage.tsx"
+        "frontend/src/components/brand/BrandMark.tsx",
+        "frontend/src/components/layout/SiteFooter.tsx",
+        "frontend/src/components/layout/SiteHeader.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -35,16 +36,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-15"
+        "REQ-20"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-the-services-page-to-explicitly-include-implementation-support-and-development-as-part-of-abm-nexttech-llp-service-offerings-in-english-in-addition-to-the-existing-service-categories",
-      "featureTitle": "Update the Services page to explicitly include implementation, support, and development as part of ABM Nexttech LLP service offerings (in English), in addition to the existing service categories.",
+      "featureId": "feature-allow-flexible-logo-placement-consistent-with-the-existing-design-it-is-acceptable-to-adjust-the-logo-placement-spacing-in-the-header-and-footer-as-needed-as-long-as-it-remains-professional-and-the-logo-renders-correctly",
+      "featureTitle": "Allow flexible logo placement consistent with the existing design: it is acceptable to adjust the logo placement/spacing in the header and footer as needed, as long as it remains professional and the logo renders correctly.",
       "files": [
-        "frontend/src/pages/HomePage.tsx",
-        "frontend/src/pages/ServicesPage.tsx"
+        "frontend/src/components/layout/SiteFooter.tsx",
+        "frontend/src/components/layout/SiteHeader.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -54,7 +55,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-16"
+        "REQ-21"
       ],
       "confidence": "high"
     }

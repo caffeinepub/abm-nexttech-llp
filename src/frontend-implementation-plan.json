@@ -1,74 +1,80 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Apply ABM Nexttech LLP logo and update Product/Services messaging",
+  "title": "Fix logo rendering and add resilient brand mark in header/footer",
   "requirements": [
     {
-      "id": "REQ-14",
-      "summary": "Add the provided ABMNexttech.png as a static asset and replace the current wordmark logo across header and footer.",
+      "id": "REQ-19",
+      "summary": "Ensure the site logo reliably renders in header (desktop + mobile sheet) and footer using a production-safe static asset path and visible sizing.",
       "acceptanceCriteria": [
-        "The file ABMNexttech.png is available as a static asset under frontend/public/assets/generated/ABMNexttech.png (or equivalent public path used by the app).",
-        "The header logo in frontend/src/components/layout/SiteHeader.tsx uses the provided logo asset instead of /assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png (desktop and mobile header).",
-        "The footer logo in frontend/src/components/layout/SiteFooter.tsx uses the provided logo asset instead of /assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png.",
-        "Logo <img> elements have accurate alt text: \"ABM Nexttech LLP\" and render without layout breakage on mobile and desktop."
+        "On Home/Services/Product/Contact pages, a logo is visible in the top navigation bar.",
+        "In the mobile menu (sheet) header, a logo is visible.",
+        "In the footer, a logo is visible.",
+        "The deployed build loads the logo without 404s; the referenced path matches the actual filename and casing.",
+        "Logo has sensible sizing (non-zero height) and does not break layout at common breakpoints."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/ABMNexttech.png",
+          "path": "frontend/public/assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png",
           "operation": "create",
-          "description": "Add the user-provided logo file to the public static assets so it can be referenced by header/footer image tags."
+          "description": "Add/ensure the logo file exists in the production static assets directory at this exact path and filename casing so it can be referenced reliably by the UI."
         },
         {
           "path": "frontend/src/components/layout/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Replace both desktop and mobile header logo <img> src values to use /assets/generated/ABMNexttech.png, keep alt text exactly \"ABM Nexttech LLP\", and adjust sizing classes if needed to prevent layout breakage across breakpoints."
+          "description": "Replace the current hardcoded logo src with a production-safe asset reference (matching actual filename/casing) and ensure the rendered logo has non-zero, responsive sizing in both the desktop header and mobile sheet header."
         },
         {
           "path": "frontend/src/components/layout/SiteFooter.tsx",
           "operation": "modify",
-          "description": "Replace the footer logo <img> src to use /assets/generated/ABMNexttech.png, keep alt text exactly \"ABM Nexttech LLP\", and adjust sizing/margins if needed to maintain the existing footer layout."
+          "description": "Replace the current hardcoded logo src with a production-safe asset reference (matching actual filename/casing) and ensure the footer logo renders visibly with sensible sizing across breakpoints."
         }
       ]
     },
     {
-      "id": "REQ-15",
-      "summary": "Update Product page messaging to clearly state the product is in development, launching soon, and demo available soon (English only).",
+      "id": "REQ-20",
+      "summary": "Add a graceful, accessible text fallback brand mark (\"ABM Nexttech LLP\") if the logo image fails to load in header and footer.",
       "acceptanceCriteria": [
-        "frontend/src/pages/ProductPage.tsx includes clear visible messaging indicating: (1) product development is in progress, (2) launching soon, and (3) demo available soon.",
-        "Any call-to-action labels and supporting copy on the Product page are consistent with “demo available soon” (i.e., do not imply the demo can be requested immediately unless the text also clarifies availability timing).",
-        "No other pages contradict the Product page status messaging (e.g., no claims that the product is already live)."
+        "If the logo image fails to load, the header shows the text \"ABM Nexttech LLP\" instead of a broken image.",
+        "If the logo image fails to load, the footer shows the text \"ABM Nexttech LLP\" instead of a broken image.",
+        "Fallback text is accessible and does not introduce new spelling variants of the company name."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/ProductPage.tsx",
-          "operation": "modify",
-          "description": "Update hero and CTA copy to explicitly communicate that development is in progress, launch is coming soon, and a demo will be available soon; adjust CTA button labels/text so they do not imply immediate demo availability (while still optionally directing users to Contact for early interest)."
+          "path": "frontend/src/components/brand/BrandMark.tsx",
+          "operation": "create",
+          "description": "Create a reusable BrandMark component that renders the logo image and, on load failure, switches to an accessible text fallback that exactly reads \"ABM Nexttech LLP\" (no spelling variants)."
         },
         {
-          "path": "frontend/src/pages/HomePage.tsx",
+          "path": "frontend/src/components/layout/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Review and adjust any homepage product-related language (if needed) to ensure it does not imply the product is already live and remains consistent with the Product page’s “in development / launching soon / demo soon” messaging."
+          "description": "Use the new BrandMark component for the header logo and the mobile sheet header logo so both locations always show branding (image or text fallback)."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Use the new BrandMark component for the footer branding so it always shows branding (image or text fallback)."
         }
       ]
     },
     {
-      "id": "REQ-16",
-      "summary": "Update Services page to explicitly include implementation, support, and development offerings and keep Home page services overview consistent.",
+      "id": "REQ-21",
+      "summary": "Adjust logo placement/spacing in header and footer as needed to keep a professional layout and maintain usability across breakpoints.",
       "acceptanceCriteria": [
-        "frontend/src/pages/ServicesPage.tsx services content includes explicit mention of implementation, support, and development offerings (either as new service cards or clearly integrated into existing service descriptions).",
-        "The Services page hero/intro and/or service list reads naturally and remains consistent with the site’s professional tone.",
-        "The Home page services overview (frontend/src/pages/HomePage.tsx) does not conflict with the updated Services offerings; if it summarizes services, it also reflects implementation/support/development where appropriate."
+        "Logo placement updates (if any) keep navigation links usable and aligned on desktop.",
+        "Logo placement updates (if any) keep the mobile menu toggle usable and aligned on small screens.",
+        "Footer layout remains readable and balanced after any logo placement changes."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/ServicesPage.tsx",
+          "path": "frontend/src/components/layout/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Update the services list and surrounding copy to explicitly call out implementation, support, and development as ABM Nexttech LLP offerings (e.g., by adding a dedicated Support service card and/or renaming/rewriting existing cards so the three terms appear clearly and professionally)."
+          "description": "Refine header layout classes around the BrandMark (alignment, spacing, and responsive sizing) so desktop navigation and the mobile menu toggle remain usable and visually aligned."
         },
         {
-          "path": "frontend/src/pages/HomePage.tsx",
+          "path": "frontend/src/components/layout/SiteFooter.tsx",
           "operation": "modify",
-          "description": "Update the Services Overview section bullets/summary to explicitly reflect implementation, support, and development so it aligns with the Services page and does not conflict with the updated offerings."
+          "description": "Refine footer branding layout/spacing around the BrandMark to keep the footer readable and balanced after logo placement updates."
         }
       ]
     }

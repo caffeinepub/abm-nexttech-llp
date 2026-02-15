@@ -1,46 +1,25 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T19:49:23.793Z",
-  "summary": "Header and footer were updated to reference /assets/generated/ABMNexttech.png with correct alt text, and Product/Services copy was updated to reflect “Launching Soon / In Development” and to add implementation/support/development offerings. However, the actual logo asset file was not added in the provided diff summary, and the Home page alignment with updated services is not verifiable from the truncated diff.",
+  "generatedAt": "2026-02-15T20:08:27.953Z",
+  "summary": "Implemented a reusable BrandMark component with image + text fallback and wired it into both SiteHeader (desktop + mobile sheet) and SiteFooter. However, the diff summary does not show the actual logo asset being added/moved into a production-served static assets directory, so the “no 404 in deployed build / correct casing / file present” part of REQ-19 cannot be verified from the provided changes.",
   "missing_requirements": [
     {
-      "id": "REQ-14",
-      "requirement": "Add the user-provided logo file (ABMNexttech.png) to the frontend static assets under frontend/public/assets/generated/ABMNexttech.png (or equivalent public path used by the app).",
-      "reason": "The diff summary shows no added files, and there is no evidence that frontend/public/assets/generated/ABMNexttech.png (or any equivalent public asset path file) was added.",
+      "id": "REQ-19",
+      "requirement": "Ensure the logo asset path is valid in production builds (including case sensitivity), the file is present in the correct static assets directory, and the deployed build loads the logo without 404s.",
+      "reason": "BrandMark references an absolute path (/assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png), but the diff summary does not include adding or relocating the referenced image into a static/public assets directory. Without evidence of the file existing at that exact path and casing, the “no 404”/production validity requirement is not confirmed.",
       "evidence": [
-        "File diff summary: \"Added: 0\"",
-        "frontend/src/components/layout/SiteHeader.tsx (references /assets/generated/ABMNexttech.png, but does not add it)",
-        "frontend/src/components/layout/SiteFooter.tsx (references /assets/generated/ABMNexttech.png, but does not add it)"
-      ]
-    },
-    {
-      "id": "REQ-16",
-      "requirement": "Ensure the Home page services overview does not conflict with the updated Services offerings and reflects implementation/support/development where appropriate.",
-      "reason": "HomePage.tsx is truncated in the diff summary; the visible excerpt does not show the Services Overview content, so there is insufficient evidence that implementation/support/development are reflected there.",
-      "evidence": [
-        "frontend/src/pages/HomePage.tsx (truncated before the services overview content)",
-        "frontend-file-summaries.txt (claims alignment, but not code evidence)"
+        "frontend/src/components/brand/BrandMark.tsx"
       ]
     }
   ],
-  "hallucinated_features": [
-    {
-      "description": "Footer includes a 'Built with ... caffeine.ai' attribution link with UTM parameters based on hostname.",
-      "reason": "This behavior is not requested by REQ-14/15/16 and appears as additional functionality/content in the modified footer.",
-      "evidence": [
-        "frontend/src/components/layout/SiteFooter.tsx (\"Built with ... using caffeine.ai\" and UTM query construction)"
-      ]
-    }
-  ],
-  "confidence": 0.62,
+  "hallucinated_features": [],
+  "confidence": 0.66,
   "changed_files": [
     "frontend-file-summaries.txt",
+    "frontend/src/components/brand/BrandMark.tsx",
     "frontend/src/components/layout/SiteFooter.tsx",
     "frontend/src/components/layout/SiteHeader.tsx",
-    "frontend/src/pages/HomePage.tsx",
-    "frontend/src/pages/ProductPage.tsx",
-    "frontend/src/pages/ServicesPage.tsx",
     "project_state.json"
   ]
 }

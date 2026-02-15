@@ -3,6 +3,7 @@ import { Link, useRouterState } from '@tanstack/react-router';
 import { Menu, X } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
+import BrandMark from '@/components/brand/BrandMark';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -20,11 +21,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img
-            src="/assets/generated/ABMNexttech.png"
-            alt="ABM Nexttech LLP"
-            className="h-8 w-auto"
-          />
+          <BrandMark className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -52,11 +49,7 @@ export default function SiteHeader() {
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <div className="flex flex-col gap-4 py-4">
               <div className="flex items-center justify-between">
-                <img
-                  src="/assets/generated/ABMNexttech.png"
-                  alt="ABM Nexttech LLP"
-                  className="h-6 w-auto"
-                />
+                <BrandMark className="h-6 w-auto" textClassName="text-lg font-bold" />
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon">
                     <X className="h-5 w-5" />

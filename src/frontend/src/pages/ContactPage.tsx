@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { CONTACT_INFO } from '@/constants/contact';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n${formData.company ? `Company: ${formData.company}\n` : ''}\n\nMessage:\n${formData.message}`
     );
-    const mailtoLink = `mailto:info@abmnexttech.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:${CONTACT_INFO.email}?subject=${subject}&body=${body}`;
 
     // Try to open mailto link
     window.location.href = mailtoLink;
@@ -98,7 +99,7 @@ export default function ContactPage() {
                   <CardTitle>Email</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">info@abmnexttech.com</CardDescription>
+                  <CardDescription className="text-base">{CONTACT_INFO.email}</CardDescription>
                 </CardContent>
               </Card>
               <Card>
@@ -107,7 +108,7 @@ export default function ContactPage() {
                   <CardTitle>Phone</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">+1 (555) 123-4567</CardDescription>
+                  <CardDescription className="text-base">{CONTACT_INFO.phone}</CardDescription>
                 </CardContent>
               </Card>
               <Card>
@@ -117,11 +118,12 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    123 Finance Street
-                    <br />
-                    Suite 100
-                    <br />
-                    New York, NY 10001
+                    {CONTACT_INFO.address.lines.map((line, index) => (
+                      <span key={index}>
+                        {line}
+                        {index < CONTACT_INFO.address.lines.length - 1 && <br />}
+                      </span>
+                    ))}
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -213,7 +215,7 @@ export default function ContactPage() {
                     {copied && (
                       <p className="text-sm text-muted-foreground text-center">
                         Your message has been copied to clipboard and your email client should open. If it doesn't,
-                        please email us directly at info@abmnexttech.com
+                        please email us directly at {CONTACT_INFO.email}
                       </p>
                     )}
                   </form>

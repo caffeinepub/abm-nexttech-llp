@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T19:49:23.795Z",
+  "generatedAt": "2026-02-15T20:08:27.956Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,11 +11,11 @@
     "implemented": 3,
     "items": [
       {
-        "id": "REQ-14",
-        "summary": "Add the user-provided logo file (ABMNexttech.png) to the frontend static assets and replace the current generated wordmark logo usage with this logo across the site header and footer.",
+        "id": "REQ-19",
+        "summary": "Fix the site branding logo so a logo reliably renders in both the header and footer on all pages. Ensure the logo asset path is valid in production builds (including case sensitivity), the file is present in the correct static assets directory, and the rendered logo is visible (not zero-sized/hidden) on both desktop and mobile navigation.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/generated/ABMNexttech.png",
+          "frontend/public/assets/generated/abm-nexttech-wordmark-transparent.dim_1200x300.png",
           "frontend/src/components/layout/SiteHeader.tsx",
           "frontend/src/components/layout/SiteFooter.tsx"
         ],
@@ -25,44 +25,43 @@
         ]
       },
       {
-        "id": "REQ-15",
-        "summary": "Update the Product page copy to clearly communicate that the AI-driven bank reconciliation product is currently in development, that the launch is coming soon, and that a demo will be available soon, while keeping user-facing text in English.",
+        "id": "REQ-20",
+        "summary": "Add a graceful fallback if the logo image cannot be loaded: display a text-based brand mark (\"ABM Nexttech LLP\") in the same location so the header and footer never appear without branding.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/ProductPage.tsx",
-          "frontend/src/pages/HomePage.tsx"
+          "frontend/src/components/brand/BrandMark.tsx",
+          "frontend/src/components/layout/SiteHeader.tsx",
+          "frontend/src/components/layout/SiteFooter.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/ProductPage.tsx",
-          "frontend/src/pages/HomePage.tsx"
+          "frontend/src/components/brand/BrandMark.tsx",
+          "frontend/src/components/layout/SiteHeader.tsx",
+          "frontend/src/components/layout/SiteFooter.tsx"
         ]
       },
       {
-        "id": "REQ-16",
-        "summary": "Update the Services page to explicitly include implementation, support, and development as part of ABM Nexttech LLP service offerings (in English), in addition to the existing service categories.",
+        "id": "REQ-21",
+        "summary": "Allow flexible logo placement consistent with the existing design: it is acceptable to adjust the logo placement/spacing in the header and footer as needed, as long as it remains professional and the logo renders correctly.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/ServicesPage.tsx",
-          "frontend/src/pages/HomePage.tsx"
+          "frontend/src/components/layout/SiteHeader.tsx",
+          "frontend/src/components/layout/SiteFooter.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/ServicesPage.tsx",
-          "frontend/src/pages/HomePage.tsx"
+          "frontend/src/components/layout/SiteHeader.tsx",
+          "frontend/src/components/layout/SiteFooter.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
+    "frontend/src/components/brand/BrandMark.tsx",
     "frontend/src/components/layout/SiteFooter.tsx",
     "frontend/src/components/layout/SiteHeader.tsx",
-    "frontend/src/pages/HomePage.tsx",
-    "frontend/src/pages/ProductPage.tsx",
-    "frontend/src/pages/ServicesPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
